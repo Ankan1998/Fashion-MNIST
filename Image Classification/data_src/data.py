@@ -15,8 +15,12 @@ class MNIST:
 
         # Normalize input images from 0-255 to 0-1
         x_train, x_test = x_train / 255, x_test / 255
+        x_val = x_test[7000:]
+        y_val = y_test[7000:]
+        x_test = x_test[:7000]
+        ytest = y_test[:7000]
 
-        return x_train, y_train, x_test, y_test
+        return x_train, y_train, x_val, y_val, x_test, y_test
 
 
 if __name__ == '__main__':
