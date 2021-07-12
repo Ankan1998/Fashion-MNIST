@@ -13,9 +13,9 @@ def training(x_train,
             optimizer='adam',
             loss='sparse_categorical_crossentropy',
             metrics=['accuracy'],
-            batch_size=32,
+            batch_size=64,
             epochs=25,
-            ckt_path='/tmp/ckpt'):
+            ckt_path='tmp/ckpt'):
 
     model.compile(optimizer=optimizer,loss=loss,metrics=metrics)
     model.summary()
@@ -46,7 +46,7 @@ def training(x_train,
 if __name__ == '__main__':
     mnist = MNIST()
     x_train, y_train, x_val, y_val, x_test, y_test = mnist.data_loader('mnist.npz')
-    training(x_train, y_train, x_val, y_val, x_test, y_test, epochs=1)
+    training(x_train, y_train, x_val, y_val, x_test, y_test, epochs=20)
     
 
 
