@@ -28,12 +28,17 @@ def training(x_train,
     save_best_only=True)
 
     model.fit(x_train,
-            y_train, 
-            batch_size = batch_size, 
-            epochs=epochs,
-            validation_data=(x_val,y_val),
-            shuffle=True,
-            callbacks=[model_checkpoint_callback])
+        y_train, 
+        batch_size = batch_size, 
+        epochs=epochs,
+        validation_data=(x_val,y_val),
+        shuffle=True,
+        callbacks=[model_checkpoint_callback])
+
+    model.load_weights(ckt_path)       
+    score = model.evaluate(x_test,y_test)       
+    print('\nTest loss:', score[0])       
+    print('Test accuracy:', score[1])
 
 
 
