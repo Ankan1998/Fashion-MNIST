@@ -25,7 +25,7 @@ class MNIST:
 
 if __name__ == '__main__':
     mnist = MNIST()
-    x_train, y_train, x_test, y_test = mnist.data_loader('mnist.npz')
+    x_train, y_train, x_val, y_val, x_test, y_test = mnist.data_loader('mnist.npz')
     
 
 
