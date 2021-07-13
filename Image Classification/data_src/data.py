@@ -18,7 +18,7 @@ class MNIST:
         x_val = x_test[7000:]
         y_val = y_test[7000:]
         x_test = x_test[:7000]
-        ytest = y_test[:7000]
+        y_test = y_test[:7000]
 
         return x_train, y_train, x_val, y_val, x_test, y_test
 
